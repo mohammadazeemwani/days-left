@@ -1,4 +1,4 @@
-export function getDaysInYear(year: number) {
+export function getDaysInYear(year: number=new Date().getFullYear()) {
     return isLeapYear(year) ? 366 : 365
 }
 
@@ -6,12 +6,12 @@ function isLeapYear(year: number) {
     return (year%4 === 0 && year%100 !== 0) || (year%400 === 0)
 }
 
-export function getDaysLeftInYear(): number {
+export function getDaysPassInYear(): number {
     const today = new Date();
-    const endOfYear = new Date(today.getFullYear(), 11, 31); // Dec 31 of current year
+    const startOfYear = new Date(today.getFullYear(), 0, 1); // Jan 1 of current year
   
     const msInDay = 1000 * 60 * 60 * 24;
-    const diffInMs = endOfYear.getTime() - today.getTime();
+    const diffInMs = today.getTime() - startOfYear.getTime();
   
     return Math.ceil(diffInMs / msInDay);
   }
