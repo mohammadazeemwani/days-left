@@ -39,7 +39,7 @@ for (let i=1; i<=daysData.total; i++) {
     i > daysData.pass && el.classList.add('active')
 }
 
-console.log(dim, daysData)
+// console.log(dim, daysData)
 
 
 }
